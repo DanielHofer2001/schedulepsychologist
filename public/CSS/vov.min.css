@@ -1,0 +1,54 @@
+@-webkit-keyframes zoom-in{
+    from{
+        -webkit-opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50%{
+        -webkit-opacity: 1;
+    }
+}
+
+.zoom-in{
+    animation-name: zoom-in;
+}
+
+@keyframes zoom-in{
+    from{
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50%{
+        opacity: 1;
+    }
+}
+.zoom-in{
+    animation-name: zoom-in;
+}
+
+@-webkit-keyframes fade-in-right{
+    from{
+        -webkit-opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+    }
+    to{
+        -webkit-opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
+.fade-in-right{
+   animation-name: fade-in-right;
+}
+
+@keyframes fade-in-right{
+    from{
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+.fade-in-right{
+    animation-name: fade-in-right;
+}

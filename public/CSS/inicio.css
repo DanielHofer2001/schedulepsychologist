@@ -1,0 +1,187 @@
+/* INICIO GRADIENT DEL FONDO DE LA PAGINA, SE DEBE USAR SIEMPRE DEBIDO AL ESTILO DE LA PAGINA*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gupter&family=Roboto+Mono:wght@200&display=swap');
+
+/* body
+{  
+    background-image: linear-gradient(90deg, rgb(81, 235, 255) 10%, rgb(255, 255, 255) 90%); 
+}
+*/
+
+.img_logo
+{
+    position: absolute;
+    top: -70px;
+    left: 760px;
+    bottom: -10px;
+    width: 25em;
+    height: 20em;
+    display: block;
+}
+
+/* FIN DE EL GRADIENT PRINCIPAL */
+/* ↓↓ APARTIR DE AQUI INGRESAR LOS RESPECTIVOS ID'S Y CLASES ↓↓ */
+
+.bienvenida
+{
+    font-family: 'Great Vibes', cursive;
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    margin: auto;
+    margin-top: 190px;
+    
+}
+
+.bienvenida2
+{
+    font-family: 'Great Vibes', cursive;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 0px;
+}
+
+.boton_principal_page1
+{
+    
+    margin: auto;
+    margin-top: 30px;
+    margin-right: 45px;  
+}
+
+.boton_principal_page2
+{
+    margin: auto;
+    margin-top: 30px;
+    margin-left: 45px;  
+}
+
+.psicologos_modals
+{
+    text-align: center;
+    /* AQUI IBA ESTO position: relative; PERO ESTOY HACIENDO TEST */
+    border-radius: 10px;
+    margin-left: 37em;
+    margin-top: 10em;
+    margin-bottom: 3em;
+}
+
+.psicologos_modals2
+{
+    text-align: center;
+    /* AQUI IBA ESTO position: relative; PERO ESTOY HACIENDO TEST */
+    border-radius: 10px;
+    margin-left: 24em;
+    margin-top: 10em;
+    
+}
+
+
+
+
+/* APARTADO PARA EL INICIO DE SESION DE AQUI HACIA ABAJO */
+
+.inicio_sesion
+{
+    margin-top: auto;
+    margin-top: 470px;
+}
+
+.apariencia
+{
+    font-family: 'Gupter', serif;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+/* APARTADO PARA EL SELECCION_LOGIN */
+
+.boton_ingreso1
+{
+    width: 130px;
+    margin: auto;
+    margin-top: 30px;
+    margin-right: 45px;  
+}
+
+.boton_ingreso2 
+{
+    width: 130px;
+    margin: auto;
+    margin-top: 30px;
+    margin-left: 45px;  
+}
+
+.boton_ingreso3 
+{
+    width: 100px;
+    margin: auto;
+    margin-top: 25em;
+    margin-left: 56em;  
+}
+
+.img_selec
+{
+    margin-left: 36%;
+}
+
+.img_selec3
+{
+   margin-left: 50em;
+   width: 100px;
+   height: 100px;
+}
+
+.img_selec4
+{
+    margin-left: 7.5em;
+    width: 100px;
+    height: 100px; 
+}
+
+
+
+/* APARTADO PARA EL LOGIN */
+
+.frm_login
+{
+    text-align: center;
+    margin: auto;
+    margin-top: 330px;
+    margin-left: 800px;
+    margin-right: 800px;
+    
+}
+
+.lbl_login_ses
+{
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 0px; 
+}
+
+/*REGISTRO*/
+
+.frm_registrarse
+{
+    text-align: center;
+    margin: auto;
+    margin-top: 200px;
+    margin-left: 600px;
+    margin-right: 600px;
+    
+}
+
+.lbl_register
+{
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 0px; 
+}
