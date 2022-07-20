@@ -30,6 +30,10 @@ class HomeController extends Controller
              return view('pag/admin/clientes');
         }
 
+        if (auth()->user()->email == 'francisco.gimenez@inacapmail.cl'){
+            return view('pag/admin/clientes');
+       }
+
         return view ('pag/cliente/agendar');   
         
 

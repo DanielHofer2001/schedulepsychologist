@@ -31,12 +31,13 @@
       <!--VENTANAS-->
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="clientes" class="nav-link active" aria-current="page">Clientes</a></li>
-        <li class="nav-item"><a href="agendar_hora" class="nav-link">Agendar Hora</a></li>
-        <li class="nav-item"><a href="gestion_consultas" class="nav-link">Gestion Consultas</a></li>
+        <li class="nav-item"><a href="{{route('evento.index')}}" class="nav-link">Agendar Hora</a></li>
+
         <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">Cerrar Sesion</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
         </li>
+
       </ul>
     </header>
   </div>
@@ -81,11 +82,13 @@
         <small class="text-muted">Agendado hace 15 dias</small>
       </div>
       <p class="mb-1">Correo:andrew.park.20@gmail.com</p>
-      <p class="mb-1">Telefono: +56996456990</p>
+      <p class="mb-1">Telefono: sexo</p>
       <p class="mb-1">Fecha Agendada: 10/06/2022</p>
       <a class="btn btnclientes btn-info" href="gestion_consultas" role="button">Gestionar Hora</a>
     </a>
   </div>
 
 </body>
+
+
 </html>

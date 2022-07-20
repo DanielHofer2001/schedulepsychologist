@@ -65,13 +65,15 @@ class EventoController extends Controller
      * @param  \App\Models\Evento  $evento
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
         //
         $evento= Evento::find($id);
 
-        $evento->start = Carbon::createFromFormat('Y-m-d  H:i:s' , $evento->start)->format('Y-m-d');
-        $evento->end = Carbon::createFromFormat('Y-m-d H:i:s' , $evento->end)->format('Y-m-d');
+
+       // $evento->start = Carbon::createFromFormat('Y-m-d H:i:s' , $evento->start)->format('Y-m-d');
+      //  $evento->end = Carbon::createFromFormat('Y-m-d H:i:s' , $evento->end)->format('Y-m-d');
 
         return response()-> json($evento);
     }

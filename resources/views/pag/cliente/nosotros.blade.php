@@ -33,6 +33,63 @@
       </ul>
     </header>
 
+    <center>
+    <h5>Estos son nuestros psicologos</h5>
+    </center>
+
+    <div class="row">
+      <center>
+    <div class="col-sm-6">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="images/mp.jpg" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">María Pía Giménez</h5>
+                  <p class="card-text">
+                    Nuestro psicologo cuenta con Terapia vincular y mindfulness son los pilares fundamentales
+                    de nuestra psicologa.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-muted">Ultima actualizacion hace 3 minutos</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <center>
+      <div class="col-sm-6">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="images/bg.jpg" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Benjamín Giménez Arenas</h5>
+                  <p class="card-text">
+                    Nuestro psicologo cuenta con atencion presencial y online para todos los adolecentes y
+                    adultos que lo necesiten.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-muted">Ultima actualizacion hace 3 minutos</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </center>
+
+
+        </center>
+        </div>
+
   </div>
 
 </body>

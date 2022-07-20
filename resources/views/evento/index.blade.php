@@ -12,16 +12,39 @@
 <script src='https://unpkg.com/@fullcalendar/timegrid@4.3.0/main.min.js'></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+
+
+
+ 
 </head>
+
 
 @extends('layouts.app')
 @section('content')
+
+<div>
+     <ul class="nav nav-pills mb-2">
+             <li class="nav-item"><a href="home" class="nav-link" aria-current="page">Clientes</a></li>
+             <li class="nav-item"><a href="{{route('evento.index')}}" class="nav-link active">Agendar Hora</a></li>
+
+             <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+             document.getElementById('logout-form').submit();">Cerrar Sesion</a>
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+             </li>
+     </ul>
+</div>
+
+
 
 <div class="container">
     <div id="agenda"> 
      <!-- CALENDARIO -->
     </div>
 </div>
+
+
 
 <div class="modal fade" id="evento" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -34,7 +57,7 @@
             </div>
             <div class="modal-body">
                 
-                <form action="">
+                <form action="" id="formularioEventos">
 
                 {!! csrf_field() !!}
 
@@ -50,8 +73,12 @@
                 </div>
                 
                 <div class="form-group">                
-                <label for="descripcion">Descripcion</label>
-                <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+                <label for="descripcion">Nombre</label>
+                <select type="text" class="form-select" name="descripcion" id="descripcion" rows="3">
+                <option selected>Elige el psicologo</option>
+                <option value="Benjamin Gimenez">Benjamin Gimenez</option>
+                <option value="Pía Gimenez">Pía Gimenez</option>
+                </select>
                 </div>
 
                 <div class="form-group">

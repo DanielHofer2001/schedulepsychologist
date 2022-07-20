@@ -28,7 +28,7 @@ Route::get('/reagendar', function () {
 Route::get('/gestion_consultas', function () {
     return view('pag/admin/gestion_consultas');
 });
-Route::get('/clientes', function () {
+Route::get('/evento', function () {
     return view('pag/admin/clientes');
 });
 Route::get('/agendar_hora', function () {
@@ -38,11 +38,13 @@ Route::get('/agendar_hora', function () {
 
 Auth::routes();
 
+Route::group(['middleware' => ['auth']], function (){
+
 Route::get('/gest_hora', [App\Http\Controllers\EventoController::class, 'mostrarTabla'])->name('gestion_hora');
 
 Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index'])->name('evento.index');
 
-Route::get('/evento/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
+Route::post('/evento/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
 
 Route::post('/evento/agregar', [App\Http\Controllers\EventoController::class, 'store']);
 
@@ -55,3 +57,5 @@ Route::post('/evento/borrar/{ID}', [App\Http\Controllers\EventoController::class
 Route::resource('agenda', App\Http\Controllers\HorasAdminController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+});

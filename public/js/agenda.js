@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-let formulario = document.querySelector("form");
+let formulario = document.querySelector("#formularioEventos");
 
 
 
@@ -8,17 +8,15 @@ let formulario = document.querySelector("form");
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
-
+       
       locale: "es",
-      displayEventTime:false,
+      
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,listWeek'
       },
-        selecttable: true,
-        selectmirror: true,
-        allDaySlot: false,
+       
 
       eventTimeFormat: {
         hour: '2-digit',
@@ -27,8 +25,19 @@ let formulario = document.querySelector("form");
        },
 
       
+      //events : "http://localhost/SchedulePsychologist/public/evento/mostrar",
 
-      events : "http://localhost/SchedulePsychologist/public/evento/mostrar",
+eventSources:{
+
+  url:baseURL+"/evento/mostrar",
+  method:"POST",
+  extraParams:{
+    _token: formulario._token.value,
+  }
+
+},
+
+      
 
       dateClick:function(info){
         formulario.reset();
@@ -46,7 +55,7 @@ let formulario = document.querySelector("form");
           var evento= info.event; 
           console.log(evento)
 
-          axios.post("http://localhost/SchedulePsychologist/public/evento/editar/"+info.event.id).
+          axios.post(baseURL+"/evento/editar/"+info.event.id).
           then(
             (respuesta)=>{
               
@@ -78,20 +87,20 @@ let formulario = document.querySelector("form");
 
     document.getElementById("btnGuardar").addEventListener("click",function(){
       
-   enviarDatos("http://localhost/SchedulePsychologist/public/evento/agregar");
+   enviarDatos("/evento/agregar");
 
     });
 
     document.getElementById("btnEliminar").addEventListener("click",function(){
 
-    enviarDatos("http://localhost/SchedulePsychologist/public/evento/borrar/" + formulario.id.value);  
+    enviarDatos("/evento/borrar/" + formulario.id.value);  
 
 
     });
 
     document.getElementById("btnEditar").addEventListener("click",function(){
 
-      enviarDatos("http://localhost/SchedulePsychologist/public/evento/actualizar/" + formulario.id.value);
+      enviarDatos("/evento/actualizar/" + formulario.id.value);
   
   
       });
@@ -102,7 +111,9 @@ let formulario = document.querySelector("form");
   function enviarDatos(url){
     const datos= new FormData(formulario);
     
-    axios.post(url, datos).
+    nuevaURL = baseURL+url;
+
+    axios.post(nuevaURL, datos).
      then(
        (respuesta)=>{
          calendar.refetchEvents();

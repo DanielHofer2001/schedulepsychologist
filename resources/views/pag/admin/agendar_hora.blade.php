@@ -28,14 +28,14 @@
       </a>
       <!--VENTANAS-->
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="clientes" class="nav-link" aria-current="page">Clientes</a></li>
-        <li class="nav-item"><a href="agendar_hora" class="nav-link active">Agendar Hora</a></li>
-        <li class="nav-item"><a href="gestion_consultas" class="nav-link">Gestion Consultas</a></li>
-        <li class="nav-item"><a href="{{route('evento.index')}}" class="nav-link">Calendario</a></li>
+        <li class="nav-item"><a href="home" class="nav-link" aria-current="page">Clientes</a></li>
+        <li class="nav-item"><a href="{{route('evento.index')}}" class="nav-link active">Agendar Hora</a></li>
+
         <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">Cerrar Sesion</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
         </li>
+
       </ul>
     </header>
   </div>
@@ -63,4 +63,6 @@
     </div>
 
 </body>
+
+
 </html>
