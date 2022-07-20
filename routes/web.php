@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 /* OBTENCION DE EL HTML DE WELCOME */
 Route::get('/', function () {
-    return ('welcome');
+    return view('welcome');
 });
 
 /* OBTENCION DE EL HTML DE LA PAGINA DE INICIO */
