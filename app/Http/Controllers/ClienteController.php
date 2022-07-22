@@ -47,7 +47,7 @@ class ClienteController extends Controller
        $datosCliente = request()->except('_token');
          Cliente::insert($datosCliente);
       // $datosCliente= request()->all(); 
-        return  response()->json($datosCliente);
+        //return  response()->json($datosCliente);
 
     }
 
