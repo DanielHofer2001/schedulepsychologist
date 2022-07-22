@@ -30,19 +30,18 @@
 </head>
 
 <body>
-  <div class="container">
-  <!--NAVEGACION PRINCIPAL-->
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+<div class="container">
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <img src="images/SPLOGO.png" alt="" width="70" height="60" class="d-inline-block align-text-top">
+        <img src="../images/SPLOGO.png" alt="" width="70" height="60" class="d-inline-block align-text-top">
         <span class="fs-4">Schedule Psychologist Cliente</span>
       </a>
 
       <!--VENTANAS-->
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="agendar" class="nav-link">Agendar</a></li>
+        <li class="nav-item"><a href="../agendar" class="nav-link">Agendar</a></li>
         <li class="nav-item"><a href="index" class="nav-link active">Gestionar Hora</a></li>
-        <li class="nav-item"><a href="nosotros" class="nav-link">Nosotros</a></li>
+        <li class="nav-item"><a href="../nosotros" class="nav-link">Nosotros</a></li>
         <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">Cerrar Sesion</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
@@ -50,12 +49,10 @@
       </ul>
     </header>
 
-  <!-- TABLA MOSTRANDO DATOS -->
-
-  <div>
-      <center>
-      <h5 class="fw-semibold vov fade-in shadow">Horas Disponibles</h5>
-      </center>
+    <div>
+           <center>
+           <h5 class="fw-semibold vov fade-in shadow">Horas Disponibles</h5>
+           </center>
     </div>
 
     <br>
@@ -82,9 +79,7 @@
           @endforeach
     </table>
 
-     <!-- FIN TABLA MOSTRANDO DATOS -->
-
-          <center>
+    <center>
           <button class="btn shadow vov fade-in btn-success w-80" type="button" data-toggle="modal" data-target="#modelId">
           Agendar Sesion
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
@@ -93,46 +88,40 @@
           </svg></button>
           </center>
 
+<form action="{{ url('prueba1') }}" method="post">
+@csrf
 
-
-          <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-              <h5 class="modal-title fw-semibold">INGRESE LOS DATOS DE SU SESION</h5>
+<!-- INICIO DE MODAL -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="false">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
-        
-               <form action="{{ url('cliente') }}"  method="post">
-               @csrf
-                
-                <div class="modal-body">
-                
-                <div class="form-group">
-                  <input type="hidden" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="" required>
-                </d0iv>
+            </div>
 
-                <div class="form-group">
-                  <label for="title">Nombre</label>
-                  <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese su nombre" required>
+            <div class="modal-body">
+
+                <div class="from-group">
+                <label for="nombre">nombre</label>
+                <input type="text" class="form-control" name="nombre" id="nombre">
                 </div>
 
-                <div class="form-group">
-                  <label for="title">Apellido</label>
-                  <input type="text" class="form-control" name="apellido" id="apellido" aria-describedby="helpId" placeholder="Ingrese su apellido" required>
+                <div class="from-group">
+                <label for="nombre">apellido</label>
+                <input type="text" class="form-control" name="apellido" id="apellido">
                 </div>
 
-                <div class="form-group">
-                  <label for="title">Telefono</label>
-                  <input type="number" class="form-control" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Ingrese su telefono" required>
-                  
+                <div class="from-group">
+                <label for="telefono">telefono</label>
+                <input type="number" class="form-control" name="telefono" id="telefono">
                 </div>
 
-                <div class="form-group">
-                  <label for="title">Email</label>
-                  <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Ingrese su email" required>
+                <div class="from-group">
+                <label for="email">email</label>
+                <input type="text" class="form-control" name="email" id="email">
                 </div>
 
                 <div class="form-group">
@@ -142,28 +131,29 @@
                 <option value="Pía Gimenez">Pía Gimenez</option>
                 </select>
                 </div>
-
+                
                 <div class="form-group">
-                <label for="title">Identificador de Sesion</label>
+                <label for="title">Id Sesion</label>
                 <select type="text" class="form-select" name="eventoid" id="eventoid" rows="3">
+
                 @foreach($evento as $eventos)
-                <option value="1">{{$eventos -> id}}</option>
+                <option value="{{$eventos -> id}}">{{$eventos -> id}}</option>
                 @endforeach
                 </select>
                 </div>
 
-
-                </form>
-                </div>
-
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-success" value="Reservar Hora">Reservar Hora</button>
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-success" value="guardar datos">
                 </div>
 
-              </div>
             </div>
-          </div>
+            </div>
+           
         </div>
-</body>
+        </div>
+</div>
+<!-- FINAL DE EL MODAL -->
+
+</body>    
 </html>

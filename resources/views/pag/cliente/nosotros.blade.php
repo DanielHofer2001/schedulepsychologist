@@ -24,7 +24,7 @@
 <!--VENTANAS-->
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="agendar" class="nav-link">Agendar</a></li>
-        <li class="nav-item"><a href="gest_hora" class="nav-link">Gestionar Hora</a></li>
+        <li class="nav-item"><a href="prueba1/index" class="nav-link">Gestionar Hora</a></li>
         <li class="nav-item"><a href="nosotros" class="nav-link active">Nosotros</a></li>
         <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">Cerrar Sesion</a>

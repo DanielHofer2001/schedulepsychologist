@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Evento;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
-use App\Models\tabla1;
 use Carbon\Carbon;
-
-class EventoController extends Controller
+use App\Models\Evento;
+use App\Models\tabla;
+class ClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,11 @@ class EventoController extends Controller
      */
     public function index()
     {
-        //
-           return view('evento.index');
+        // ESTE APARTADO NOS MUESTRA LA VISTA DE EL ADMINISTRADOR
+
+        
+        return view('prueba1.index');
+    
     }
 
     /**
@@ -28,6 +31,9 @@ class EventoController extends Controller
     public function create()
     {
         //
+       
+        return view('prueba1.envio_datos');
+        
     }
 
     /**
@@ -38,9 +44,10 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        //
-            request()->validate(Evento::$rules);
-            $evento=Evento::create($request->all());
+       $datosCliente = request()->except('_token');
+         Cliente::insert($datosCliente);
+      // $datosCliente= request()->all(); 
+        return  response()->json($datosCliente);
 
     }
 
@@ -111,20 +118,24 @@ class EventoController extends Controller
         return response()-> json($evento);
     }
 
-    public function mostrarTabla(){
-
-    $evento=Evento::all();
-    return view ('pag.cliente.gestionar_hora', compact('evento'));
-    
-
-    }
-
     public function mostrarTabla2(){
 
         $evento=Evento::all();
-        return view ('views.prueba1.envio_datos', compact('evento'));
+        return view ('prueba1.index', compact('evento'));
     
-        }
+    }
 
+    public function mostrarTabla3(){
+
+        $datosCliente=Cliente::all();
+        $evento=Evento::all();
+       // $todoDato=tabla1::all();
+
+        return view ('pag.admin.clientes', compact('datosCliente','evento'));
         
+    }
+
+    
+
+    
 }

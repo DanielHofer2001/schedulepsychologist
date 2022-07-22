@@ -28,8 +28,8 @@
       </a>
       <!--VENTANAS-->
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="home" class="nav-link" aria-current="page">Clientes</a></li>
-        <li class="nav-item"><a href="{{route('evento.index')}}" class="nav-link active">Agendar Hora</a></li>
+        <li class="nav-item"><a href="public/admincliente" class="nav-link" aria-current="page">Clientes</a></li>
+        <li class="nav-item"><a href="agendar_hora" class="nav-link active">Agendar Hora</a></li>
 
         <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">Cerrar Sesion</a>

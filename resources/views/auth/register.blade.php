@@ -92,9 +92,9 @@
 
                         <center>
                         <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-3">
                                 <button type="submit" class="btn btn-primary">
-                                    <h5>Registrarse</h5>
+                                    <h7>Registrarse</h7>
                                 </button>
                             </div>
                             </center>

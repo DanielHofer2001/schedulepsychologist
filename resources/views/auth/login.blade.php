@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/gh/vaibhav111tandon/vov.css@latest/vov.css" rel="stylesheet" type="text/css">
 
   <!-- REFERENCIAS DE HOJAS DE ESTILO Y ANIMACIONES -->
+  <link href="https://cdn.jsdelivr.net/gh/vaibhav111tandon/vov.css@latest/vov.css" rel="stylesheet" type="text/css">
   <script type="text/javascript" src="{{asset('js/login.js')}}"></script>
   <link rel="stylesheet" href="{{asset('CSS/vov.min.css')}}">
   <link rel="stylesheet" href="{{asset('CSS/inicio.css')}}">
@@ -22,9 +23,7 @@
   <title>Schedule Psyschologist</title>
 </head>
 
-
 @extends('layouts.app')
-
 @section('content')
 <body background="images/AvatarPandora2.jpg">
     
@@ -38,7 +37,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="row mb-3">
+                        <div class="row mb-3 vov slide-in-right">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Correo') }}</label>
 
                             <div class="col-md-6">
@@ -52,7 +51,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
+                        <div class="row mb-3 vov slide-in-right">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
@@ -67,7 +66,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4 vov slide-in-right">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -79,7 +78,7 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-8 offset-md-4 vov slide-in-right">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Ingresar') }}
                                 </button>
@@ -88,7 +87,7 @@
                     </center>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link vov slide-in-right" href="{{ route('password.request') }}">
                                         {{ __('¿Olvidaste tu contraseña?') }}
                                     </a>
                                 @endif

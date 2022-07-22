@@ -10,6 +10,9 @@ let formulario = document.querySelector("#formularioEventos");
       initialView: 'dayGridMonth',
        
       locale: "es",
+      allDay:false,
+      selectable: true,
+      selectHelper: true,
       
       headerToolbar: {
         left: 'prev,next today',

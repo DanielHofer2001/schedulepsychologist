@@ -17,10 +17,12 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
-            $table->string('correo');
-            $table->string('password');
-            $table->string('telefono');
-            $table->timestamps();
+            $table->string('apellido');
+            $table->integer('telefono');
+            $table->string('email');
+            $table->string('psicologo');
+            $table->unsignedBigInteger('eventoid');
+            $table->foreign('eventoid')->references('id')->on('eventos')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('clientes');
     }
 };

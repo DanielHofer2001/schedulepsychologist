@@ -13,22 +13,15 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-
-
-
-
- 
 </head>
-
 
 @extends('layouts.app')
 @section('content')
 
 <div>
      <ul class="nav nav-pills mb-2">
-             <li class="nav-item"><a href="home" class="nav-link" aria-current="page">Clientes</a></li>
-             <li class="nav-item"><a href="{{route('evento.index')}}" class="nav-link active">Agendar Hora</a></li>
-
+             <li class="nav-item"><a href="admincliente" class="nav-link" aria-current="page">Clientes</a></li>
+             <li class="nav-item"><a href="evento" class="nav-link active">Agendar Hora</a></li>
              <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
              document.getElementById('logout-form').submit();">Cerrar Sesion</a>
              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
@@ -36,15 +29,11 @@
      </ul>
 </div>
 
-
-
 <div class="container">
     <div id="agenda"> 
      <!-- CALENDARIO -->
     </div>
 </div>
-
-
 
 <div class="modal fade" id="evento" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -111,7 +100,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-success"  id="btnGuardar">Guardar</button>
                 <button type="button" class="btn btn-warning"  id="btnEditar" >Actualizar Hora</button>
-                <button type="button" class="btn btn-danger"  id="btnEliminar">eliminar</button>
+                <button type="button" class="btn btn-danger"  id="btnEliminar">Eliminar</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" >Cerrar</button>
             </div>
         </div>

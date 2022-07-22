@@ -33,12 +33,17 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('Bienvenido al sistema, ¡credenciales autentificadas!') }}
                 </div>
+                <!-- BOTON ANTIGUO HERE! -->
             </div>
         </div>
     </div>
 </div>
+<br>
+<center>
+<a type="button" class="btn btn-info" value="INGRESAR AL SISTEMA" href="admincliente">INGRESAR AL SISTEMA</a>
+</center>
 @endsection
 </body>
 </html>

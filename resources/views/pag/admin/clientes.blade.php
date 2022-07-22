@@ -19,76 +19,75 @@
     <title>VISUALIZACION DE CLIENTES</title>
 </head>
 <body>
+    <div class="container">
+        <!--NAVEGACION PRINCIPAL-->
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <img src="images/SPLOGO.png" alt="" width="70" height="60"
+              class="d-inline-block align-text-top">
+            <span class="fs-4">Schedule Psychologist Administrador</span>
+          </a>
+          <!--VENTANAS-->
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="admincliente" class="nav-link active" aria-current="page">Clientes</a></li>
+            <li class="nav-item"><a href="evento" class="nav-link">Agendar Hora</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">Cerrar Sesion</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+            </li>
+
+          </ul>
+        </header>
+      </div>
+      <div>
+           <center>
+           <h5 class="fw-semibold vov fade-in shadow">Horas Registradas</h5>
+           </center>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col">
+      <table class="table shadow vov fade-in table-bordered">
+      <thead>
+        <tr>
+          <td>ID hora</td>
+          <td>Nombre</td>
+          <td>Apellido</td>
+          <td>Telefono</td>
+          <td>Email</td>
+        </tr>
+      
+        @foreach($datosCliente as $datosCliente)
+        <tr>
+        <td>{{$datosCliente -> eventoid}}</td>
+          <td>{{$datosCliente -> nombre}}</td>
+          <td>{{$datosCliente -> apellido}}</td>
+          <td>{{$datosCliente -> telefono}}</td>
+          <td>{{$datosCliente -> email}}</td>
+          @endforeach
+        </tr>   
+      </table>
+      </div>
+      <div class="col">
+      <table class="table shadow vov fade-in table-bordered">
+        <tr>
+          <td>Hora de inicio</td>
+          <td>Hora final</td>
+          <td>Fecha Agendada</td>
+        </tr>
+        <tr>
+          @foreach($evento as $eventos)
+          <td>{{$eventos -> hinicio}}</td>
+          <td>{{$eventos -> hfinal}}</td>
+          <td>{{$eventos -> start}}</td>
+        </tr>
+        @endforeach
+      </table>
+      </div>
+    </div>
     
-<div class="container">
-    <!--NAVEGACION PRINCIPAL-->
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <img src="images/SPLOGO.png" alt="" width="70" height="60"
-          class="d-inline-block align-text-top">
-        <span class="fs-4">Schedule Psychologist Administrador</span>
-      </a>
-      <!--VENTANAS-->
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="clientes" class="nav-link active" aria-current="page">Clientes</a></li>
-        <li class="nav-item"><a href="{{route('evento.index')}}" class="nav-link">Agendar Hora</a></li>
-
-        <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();">Cerrar Sesion</a>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
-        </li>
-
-      </ul>
-    </header>
-  </div>
-
-  <div class="list-group list_group_0">
-    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Pablo Hernandez</h5>
-        <small>Agendado hace 3 dias</small>
-      </div>
-      <p class="mb-1">Correo: Pabll.hernan@gmail.com</p>
-      <p class="mb-1">Telefono: +56996898854</p>
-      <p class="mb-1">Fecha Agendada: 25/06/2022</p>
-      <a class="btn btnclientes btn-info" href="gestion_consultas" role="button">Gestionar Hora</a>
-    </a>
-    <br>
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Mark Spector</h5>
-        <small class="text-muted">Agendado hace 5 dias</small>
-      </div>
-      <p class="mb-1">Correo:mark_spectr@gmail.com</p>
-      <p class="mb-1">Telefono: +56996456854</p>
-      <p class="mb-1">Fecha Agendada: 29/06/2022</p>
-      <a class="btn btnclientes btn-info" href="gestion_consultas" role="button">Gestionar Hora</a>
-    </a>
-    <br>
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Victor Von Dooom</h5>
-        <small class="text-muted">Agendado hace 1 dias</small>
-      </div>
-      <p class="mb-1">Correo:vic.von1998@gmail.com</p>
-      <p class="mb-1">Telefono: +56978956854</p>
-      <p class="mb-1">Fecha Agendada: 15/06/2022</p>
-      <a class="btn btnclientes btn-info" href="gestion_consultas" role="button">Gestionar Hora</a>
-    </a>
-    <br>
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Andrew Parker</h5>
-        <small class="text-muted">Agendado hace 15 dias</small>
-      </div>
-      <p class="mb-1">Correo:andrew.park.20@gmail.com</p>
-      <p class="mb-1">Telefono: sexo</p>
-      <p class="mb-1">Fecha Agendada: 10/06/2022</p>
-      <a class="btn btnclientes btn-info" href="gestion_consultas" role="button">Gestionar Hora</a>
-    </a>
-  </div>
-
+      
+      
 </body>
-
-
 </html>
