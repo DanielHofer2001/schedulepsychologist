@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Evento;
 use Illuminate\Http\Request;
-use App\Models\tabla1;
+
 use Carbon\Carbon;
 
 class EventoController extends Controller
@@ -111,8 +111,7 @@ class EventoController extends Controller
         return response()-> json($evento);
     }
 
-    public function mostrarTabla(){
-
+    public function mostrarTabla(){ 
     $evento=Evento::all();
     return view ('pag.cliente.gestionar_hora', compact('evento'));
     
@@ -121,6 +120,7 @@ class EventoController extends Controller
 
     public function mostrarTabla2(){
 
+        
         $evento=Evento::all();
         return view ('views.prueba1.envio_datos', compact('evento'));
     

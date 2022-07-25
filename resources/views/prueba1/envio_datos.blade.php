@@ -105,22 +105,22 @@
             <div class="modal-body">
 
                 <div class="from-group">
-                <label for="nombre">nombre</label>
+                <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" name="nombre" id="nombre">
                 </div>
 
                 <div class="from-group">
-                <label for="nombre">apellido</label>
+                <label for="nombre">Apellido</label>
                 <input type="text" class="form-control" name="apellido" id="apellido">
                 </div>
 
                 <div class="from-group">
-                <label for="telefono">telefono</label>
+                <label for="telefono">Telefono</label>
                 <input type="number" class="form-control" name="telefono" id="telefono" maxlength="9">
                 </div>
 
                 <div class="from-group">
-                <label for="email">email</label>
+                <label for="email">Email</label>
                 <input type="text" class="form-control" name="email" id="email">
                 </div>
 

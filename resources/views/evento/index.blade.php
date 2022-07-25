@@ -30,9 +30,7 @@
 </div>
 
 <div class="container">
-    <div id="agenda"> 
-     <!-- CALENDARIO -->
-    </div>
+    <div id="agenda"></div>
 </div>
 
 <div class="modal fade" id="evento" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">

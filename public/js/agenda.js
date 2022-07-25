@@ -36,9 +36,29 @@ eventSources:{
   method:"POST",
   extraParams:{
     _token: formulario._token.value,
+
+
   }
 
+  
 },
+plugins: [ dayGridPlugin, interactionPlugin ],
+  events: [
+    {
+      groupId: 'blueEvents', // recurrent events in this group move together
+      daysOfWeek: [ '4' ],
+      startTime: '10:45:00',
+      endTime: '12:45:00'
+    },
+    {
+      daysOfWeek: [ '3' ], // these recurrent events move separately
+      startTime: '11:00:00',
+      endTime: '11:30:00',
+      color: 'red'
+    }
+  ],
+  editable: true,
+
 
       
 

@@ -34,7 +34,7 @@
 <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <img src="../images/SPLOGO.png" alt="" width="70" height="60" class="d-inline-block align-text-top">
-        <span class="fs-4">Schedule Psychologist Cliente</span>
+        <span class="fs-5 fw-semibold">Schedule Psychologist Cliente</span>
       </a>
 
       <!--VENTANAS-->
@@ -49,18 +49,12 @@
       </ul>
     </header>
 
-    <div>
-           <center>
-           <h5 class="fw-semibold vov fade-in shadow">Horas Disponibles</h5>
-           </center>
-    </div>
-
-    <br>
-    <table class="table shadow vov fade-in table-bordered">
+    
+    <!-- PRIMERA TABLA PSICOLOGO N°1 -->
+    <table class="vov fade-in table shadow table-bordered"><h6 class="fw-semibold">Atencio todo publico terapia vincular y mindfulness - Pia Gimenez</h6>
       <thead>
         <tr>
-          <td>Numero de Hora</td>
-          <td>Psicologo</td>
+          <td>Identificador Sesion</td>
           <td>Fecha Inicial</td>
           <td>Fecha Final</td>
           <td>Hora Inicio</td>
@@ -69,90 +63,117 @@
       
         @foreach($evento as $eventos)
         <tr>
-          <td>Numero: {{$eventos -> id}}</td>
-          <td>{{$eventos -> descripcion}}</td>
+          <td>Identificador: {{$eventos -> id}}</td>
           <td>{{$eventos -> start}}</td>
           <td>{{$eventos -> end}}</td>
           <td>{{$eventos -> hinicio}} Hrs</td>
           <td>{{$eventos -> hfinal}} Hrs</td>
-          </tr>
-          @endforeach
+        </tr>
+        @endforeach
     </table>
 
-    <center>
-          <button class="btn shadow vov fade-in btn-success w-80" type="button" data-toggle="modal" data-target="#modelId">
-          Agendar Sesion
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
-          <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
-          <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
-          </svg></button>
-          </center>
+    <!-- 
+    <table class="vov fade-in table shadow table-bordered"><h6 class="fw-semibold">Atencion para adolecentes y niños - Benjamin Gimenez</h6>
+      <thead>
+        <tr>
+          <td>Identificador Sesion</td>
+          <td>Fecha Inicial</td>
+          <td>Fecha Final</td>
+          <td>Hora Inicio</td>
+          <td>Hora Termino</td>
+        </tr>
+      
+        <tr>
+          <td>Identificador: </td>
+          <td></td>
+          <td></td>
+          <td>Hrs</td>
+          <td>Hrs</td>
+        </tr>
+    </table>
+    -->
 
-<form action="{{ url('prueba1') }}" method="post">
+    <center>
+    <button class="btn shadow vov fade-in btn-success w-80" type="button" data-toggle="modal" data-target="#modelId">
+            Agendar Sesion
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+              <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+              <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+            </svg>
+            </button>
+    </center>
+
+<form action="{{ url('/agendar') }}" method="post">
 @csrf
 
 <!-- INICIO DE MODAL -->
 <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Agende su hora</h5>
+                <h5 class="modal-title fw-semibold text-center">Agende su hora</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
-
             <div class="modal-body">
 
                 <div class="from-group">
-                <label for="nombre">nombre</label>
+                <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" name="nombre" id="nombre">
                 </div>
 
                 <div class="from-group">
-                <label for="nombre">apellido</label>
+                <label for="nombre">Apellido</label>
                 <input type="text" class="form-control" name="apellido" id="apellido">
                 </div>
 
                 <div class="from-group">
-                <label for="telefono">telefono</label>
-                <input type="number" class="form-control" name="telefono" id="telefono">
+                <label for="telefono">Telefono</label>
+                <input type="number" class="form-control" name="telefono" id="telefono" maxlengh='8'>
                 </div>
 
                 <div class="from-group">
-                <label for="email">email</label>
+                <label for="email">Email</label>
                 <input type="text" class="form-control" name="email" id="email">
                 </div>
 
+                <!-- APARTADOD DE ESCOGER TU PSICOLOGO
                 <div class="form-group">
                 <label for="title">Elija Su Psicologo Deseado</label>
                 <select type="text" class="form-select" name="psicologo" id="psicologo" rows="3">
                 <option value="Benjamin Gimenez">Benjamin Gimenez</option>
                 <option value="Pía Gimenez">Pía Gimenez</option>
                 </select>
-                </div>
-                
+                </div>             
+                -->
+
                 <div class="form-group">
-                <label for="title">Id Sesion</label>
-                <select type="text" class="form-select" name="eventoid" id="eventoid" rows="3">
+                <label for="title">Hora a reservar</label>
+                <select type="text" class="form-select" name="descripcion" id="descripcion" rows="3">
 
                 @foreach($evento as $eventos)
-                <option value="{{$eventos -> id}}">{{$eventos -> id}}</option>
+                <option value="Psicologo: {{$eventos -> descripcion}}, Fecha: {{$eventos -> start}}, Hora de inicio: {{$eventos -> hinicio}}"> Psicologo: {{$eventos -> descripcion}}, Fecha: {{$eventos -> start}}, Hora de inicio: {{$eventos -> hinicio}}</option>
                 @endforeach
+
+
                 </select>
                 </div>
 
+
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <input type="submit" class="btn btn-success" value="guardar datos">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-success"  value="guardar datos">Agendar</button>
                 </div>
 
-            </div>
+              </div>
             </div>
            
+            
         </div>
         </div>
 </div>
+
 <!-- FINAL DE EL MODAL -->
 
 </body>    

@@ -7,6 +7,7 @@
   <link rel=StyleSheet href="css_mn.css" type="text/css" media=screen>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/gh/vaibhav111tandon/vov.css@latest/vov.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{{asset('css_mn.css')}}">
   <link rel="stylesheet" href="{{asset('cliente.css')}}">
   
@@ -32,49 +33,30 @@
         </li>
       </ul>
     </header>
-    <table class="table">
+    <table class="vov fade-in table shadow table-bordered"><h6 class="fw-semibold">Horas agendadas</h6>
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Fecha</th>
-          <th scope="col">Horario</th>
-          <th scope="col"></th>
+          <td>Nombre</td>
+          <td>Apellido</td>
+          <td>Telefono</td>
+          <td>Email</td>
+          <td>Hora agendada</td>
         </tr>
-      </thead>
-      <tbody class="table-group-divider">
+        @foreach($reservaCliente as $reservaClientes)
         <tr>
-          <th scope="row">1</th>
-          <td>20-06-2022</td>
-          <td>10:00 - 11:30</td>
-          <td><a class="btn btnclientes btn-outline-success" href="gestionar_hora" role="button">Gestionar Hora</a></td>
+          <td>{{$reservaClientes -> nombre}}</td>
+          <td>{{$reservaClientes -> apellido}}</td>
+          <td>{{$reservaClientes -> telefono}}</td>
+          <td>{{$reservaClientes -> email}}</td>
+          <td>{{$reservaClientes -> descripcion}}</td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>20-06-2022</td>
-          <td>11:40 - 13:10</td>
-          <td><a class="btn btnclientes btn-outline-success" href="gestionar_hora" role="button">Gestionar Hora</a> </td>
-          
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>20-06-2022</td>
-          <td>13:20 - 14:50</td>
-          <td><a class="btn btnclientes btn-outline-success" href="gestionar_hora" role="button">Gestionar Hora</a></td>
-        </tr>
-      </tbody>
+        @endforeach
+
+        
     </table>
-    <p>
-      En estos momentos usted no posee una hora agendada con nosotros, si desea agendar una hora con uno de
-      <br>
-      nuestros psicologos simplemente presione el boton
-      <br>
-      <br>
-      <a class="btn btnclientes btn-primary" href="gestionar_hora" role="button">Agendar</a>
-
-      
-    </p>
   </div>
-
-
 </body>
+<footer class="text-center">
+&copy; SchedulePsychologist Derechos Reservados Inacap 2022
+</footer>
 </html>

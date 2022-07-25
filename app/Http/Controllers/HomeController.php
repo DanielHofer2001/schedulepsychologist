@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 use App\Models\Evento;
-use App\Models\tabla1;
+use App\Models\Reserva;
 
 class HomeController extends Controller
 {
@@ -38,7 +38,7 @@ class HomeController extends Controller
             return view('home');
        }
 
-        return view ('pag/cliente/agendar');   
+        return view ('home2');   
         
 
         

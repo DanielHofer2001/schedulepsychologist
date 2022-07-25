@@ -7,13 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/* OBTENCION DE EL HTML DE LA PAGINA DE INICIO */
-
-/* OBTENCION DE EL HTML DE LA PAGINA DE LOGIN */
-
-
-/* OBTENCION DE EL HTML DE LA PAGINA DE REGISTRO */
-
 Route::get('/agendar', function () {
     return view('pag/cliente/agendar');
 });
@@ -46,6 +39,20 @@ Route::get('/prueba1/index', [App\Http\Controllers\ClienteController::class, 'mo
 Route::get('/admincliente', [App\Http\Controllers\ClienteController::class, 'mostrarTabla3'])->name('cliente');
 
 
+//APARTADO RESERVAS
+
+Route::post('/reserva/actualizar/{reserva}', [App\Http\Controllers\ReservaController::class, 'update']);
+Route::post('/reserva/editar/{ID}', [App\Http\Controllers\ReservaController::class, 'edit']);
+//Route::delete('/agendar/{ID}', [App\Http\Controllers\ReservaController::class, 'destroy'])->name('agendar.delete');
+Route::post('/reserva/mostrar', [App\Http\Controllers\ReservaController::class, 'show']);
+Route::post('/agendar', [App\Http\Controllers\ReservaController::class, 'store'])->name('agendar.store');
+Route::get('/agendar', [App\Http\Controllers\ReservaController::class, 'mostrarReserva'])->name('agendar');
+Route::get('/reserva/{reserva}', [App\Http\Controllers\ReservaController::class, 'index'])->name('reserva.index');
+
+//TEST DELETE
+Route::delete('/reserva/{reservaCliente}', [App\Http\Controllers\ReservaController::class, 'destroy'])->name('reserva.delete');
+
+
 //APARTADO DE EVENTO - CALENDARIO
 
 Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index'])->name('evento.index');
@@ -60,6 +67,7 @@ Route::post('/evento/borrar/{ID}', [App\Http\Controllers\EventoController::class
 //Route::get('/cliente', [App\Http\Controllers\ClienteController::class, 'index'])->name('pag.admin.clientes');
 Route::get('/cliente', [App\Http\Controllers\ClienteController::class, 'index'])->name('pag.admin.clientes');
 Route::post('/cliente/mostrar', [App\Http\Controllers\ClienteController::class, 'show']);
+Route::post('index', [App\Http\Controllers\ClienteController::class, 'index']);
 Route::post('/cliente/agregar', [App\Http\Controllers\ClienteController::class, 'store']);
 Route::post('/cliente/editar/{ID}', [App\Http\Controllers\ClienteController::class, 'edit']);
 Route::post('/cliente/actualizar/{evento}', [App\Http\Controllers\ClienteController::class, 'update']);
@@ -67,11 +75,7 @@ Route::post('/cliente/borrar/{ID}', [App\Http\Controllers\ClienteController::cla
 
 Route::resource('/prueba1', ClienteController::class);
 
-Route::resource('agenda', App\Http\Controllers\HorasAdminController::class);
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('/home');
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
-
 
 });

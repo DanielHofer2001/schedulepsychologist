@@ -39,7 +39,8 @@
           </ul>
         </header>
       </div>
-      <div>
+  <div class="container">
+    <div>
            <center>
            <h5 class="fw-semibold vov fade-in shadow">Horas Registradas</h5>
            </center>
@@ -48,46 +49,41 @@
     <br>
     <div class="row">
       <div class="col">
-      <table class="table shadow vov fade-in table-bordered">
+      <table class="vov fade-in table shadow table-bordered"><h6 class="fw-semibold">Horas agendadas</h6>
       <thead>
         <tr>
-          <td>ID hora</td>
           <td>Nombre</td>
           <td>Apellido</td>
           <td>Telefono</td>
           <td>Email</td>
+          <td>Hora agendada</td>
         </tr>
-      
-        @foreach($datosCliente as $datosCliente)
+        @foreach($reservaCliente as $reservaClientes)
         <tr>
-        <td>{{$datosCliente -> eventoid}}</td>
-          <td>{{$datosCliente -> nombre}}</td>
-          <td>{{$datosCliente -> apellido}}</td>
-          <td>{{$datosCliente -> telefono}}</td>
-          <td>{{$datosCliente -> email}}</td>
-          @endforeach
-        </tr>   
-      </table>
-      </div>
-      <div class="col">
-      <table class="table shadow vov fade-in table-bordered">
-        <tr>
-          <td>Hora de inicio</td>
-          <td>Hora final</td>
-          <td>Fecha Agendada</td>
-        </tr>
-        <tr>
-          @foreach($evento as $eventos)
-          <td>{{$eventos -> hinicio}}</td>
-          <td>{{$eventos -> hfinal}}</td>
-          <td>{{$eventos -> start}}</td>
+          <td>{{$reservaClientes -> nombre}}</td>
+          <td>{{$reservaClientes -> apellido}}</td>
+          <td>{{$reservaClientes -> telefono}}</td>
+          <td>{{$reservaClientes -> email}}</td>
+          <td>{{$reservaClientes -> descripcion}}</td>
+          <td>
+          <form action="{{route('reserva.delete', $reservaClientes -> id )}}" method="POST">
+              @csrf
+              @method ('DELETE')
+              <button class="btn btn-danger" type="submit">
+                  <i>Eliminar</i>
+              </button>
+            </form>
+          </td>
         </tr>
         @endforeach
-      </table>
+    </table>
       </div>
     </div>
     
       
-      
+    </div>
 </body>
+<footer class="text-center">
+&copy; SchedulePsychologist Derechos Reservados Inacap 2022
+</footer>
 </html>

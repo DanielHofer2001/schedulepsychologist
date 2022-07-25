@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Evento;
 use App\Models\tabla;
+use App\Models\Reserva;
 class ClienteController extends Controller
 {
     /**
@@ -18,9 +19,9 @@ class ClienteController extends Controller
     {
         // ESTE APARTADO NOS MUESTRA LA VISTA DE EL ADMINISTRADOR
 
+        $evento = Evento::all();
+        return view('prueba1.index', compact('evento'));
         
-        return view('prueba1.index');
-    
     }
 
     /**
@@ -32,7 +33,7 @@ class ClienteController extends Controller
     {
         //
        
-        return view('prueba1.envio_datos');
+        return view('prueba1.index');
         
     }
 
@@ -48,6 +49,8 @@ class ClienteController extends Controller
          Cliente::insert($datosCliente);
       // $datosCliente= request()->all(); 
         //return  response()->json($datosCliente);
+        return view('prueba1.index');
+    
 
     }
 
@@ -127,11 +130,11 @@ class ClienteController extends Controller
 
     public function mostrarTabla3(){
 
-        $datosCliente=Cliente::all();
+        $reservaCliente=Reserva::all();
         $evento=Evento::all();
        // $todoDato=tabla1::all();
 
-        return view ('pag.admin.clientes', compact('datosCliente','evento'));
+        return view ('pag.admin.clientes', compact('reservaCliente'));
         
     }
 
