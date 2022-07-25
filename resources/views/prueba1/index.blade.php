@@ -118,6 +118,10 @@
             </div>
             <div class="modal-body">
 
+                <div class="form-group">
+                <input type="hidden" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="" required>
+                </div>
+
                 <div class="from-group">
                 <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" name="nombre" id="nombre">

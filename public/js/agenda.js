@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let formulario = document.querySelector("#formularioEventos");
 
-
-
     var calendarEl = document.getElementById('agenda'); 
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
